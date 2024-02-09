@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.S.C Resim Galerisi</title>
+    <style>
+       body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            width: 100%; 
+            background-position:center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color:  rgb(215, 91, 143);
+            
+        }
+
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px;
+        }
+
+        #gallery img {
+            display: flex;
+            width: 80%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        h1 {
+           
+           text-align: center;
+           font-size: 40px;
+           color: rgb(247, 242, 245);
+           font-family: "Comic Sans MS";
+           animation: dance 1s infinite;
+           background-color: rgb(215, 91, 143);
+        }
+
+        h5 {
+          text-align: center;
+          animation: dance 1s infinite;
+          color:  rgb(244, 247, 242);
+          font-family: "Comic Sans MS";
+        }
+
+        button {
+          background-color: rgb(244, 228, 239);
+          color:#ea299d;
+          font-family: "Comic Sans MS";
+        }
+
+        h6{
+          font-family: "Comic Sans MS";
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1> Resim Galerisi📸</h1>
+
+    <h5> <div class="alert alert-success" role="alert"><i class="bi bi-info-circle" > </i> </div></h5>
+
+    <button type="button" style="width: 40%;" background-color="pink" onclick="location.reload()"> ♻ Sayfayı Yenile! </button> 
+
+    <div id="gallery"></div>
+
+    <script>
+        // Galeri div'ini seç
+        const gallery = document.getElementById('gallery');
+
+        // Galeri içine rasgele resim ekleyen fonksiyon
+        function updateGallery() {
+            gallery.innerHTML = '';
+
+            for (let i = 0; i < 15; i++) {
+                const imageUrl = `https://source.unsplash.com/random/300x300?sig=${i}`;
+                gallery.innerHTML += `<img src="${imageUrl}" alt="Random Image ${i + 1}">`;
+            }
+        }
+
+        // Sayfa yüklendiğinde ve her yenilendiğinde galeriyi güncelle
+        document.addEventListener('DOMContentLoaded', updateGallery);
+        window.addEventListener('load', updateGallery);
+    </script>
+     <h6>&copy;GSC</h6>
+      
+</body>
+</html>
