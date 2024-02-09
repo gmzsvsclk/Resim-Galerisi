@@ -1,0 +1,2 @@
+# Resim-Galerisi
+Üretken Akademi
